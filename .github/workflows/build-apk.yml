@@ -48,6 +48,8 @@ jobs:
           open(p, "w").write(s.replace("<application", perms + "    <application", 1))
           '
           npx cap sync android
+          - name: Generate Android App Icons
+        run: npx @capacitor/assets generate --android --iconBackgroundColor '#8B151B' --iconBackgroundColorDark '#680E13'
       - name: Build Debug APK
         run: |
           cd android
